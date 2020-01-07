@@ -1,0 +1,59 @@
+<section class="data-graph-section">
+  <div class="flex-row flex-justify-align">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="usid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.usid}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User </th>
+        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="game_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Game ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.game_id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="game_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Game ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.game_name}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="gsid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> GSID </th>
+        <td mat-cell *matCellDef="let element"> {{element.gsid}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="conn_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Connection ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.conn_id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="src">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Game Source</th>
+        <td mat-cell *matCellDef="let element"> {{element.src}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dst">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Server Destination </th>
+        <td mat-cell *matCellDef="let element"> {{element.dst}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="avg_direct_rtt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Server Speed</th>
+        <td mat-cell *matCellDef="let element"> {{element.avg_direct_rtt}} </td>
+      </ng-container>
+      <ng-container matColumnDef="avg_wtfast_rtt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Server Wtfast Speed</th>
+        <td mat-cell *matCellDef="let element"> {{element.avg_wtfast_rtt}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>

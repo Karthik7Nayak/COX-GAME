@@ -1,0 +1,85 @@
+.navbar {
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px 25px;
+}
+.navbar .logo{
+  cursor: pointer;
+}
+.navbar .column {
+  flex: 1;
+  align-items: flex-end;
+}
+.navbar .address {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar .nav-title {
+  text-align: center;
+  padding-bottom: 15px;
+  border-image: linear-gradient(to left, #00a5fb 0%, #01d635 100%);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-bottom: 4px solid;
+}
+.navbar .nav-title span {
+  font-size: 45px;
+  letter-spacing: 2.5px;
+}
+.navbar .login-span {
+  cursor: pointer;
+  margin-left: 5px;
+}
+.logged-user-email {
+  cursor: pointer;
+  font-weight: 600;
+}
+.game-list {
+  overflow-x: auto;
+}
+.game-list .game {
+  flex: 1;
+  padding: 0 30px;
+}
+.game-list .game img {
+  height: 300px;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.game-list .game .game-name {
+  margin-top: 10px;
+}
+.game-row {
+  padding: 50px 20px;
+}
+
+.game-row .game-name-key {
+  padding: 35px;
+}
+
+.game-row .game-name-key .list {
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.game-row .game-name-key .list li {
+  list-style-type: none;
+  cursor: pointer;
+}
+.login-span {
+  margin-top: 10px;
+  cursor: pointer;
+  color: #206eff;
+}
+.system-config-btn{
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.config-panel{
+  background-color: gray;
+  /* height: 300px; */
+  padding:15px 10px;
+}
+

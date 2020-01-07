@@ -1,0 +1,48 @@
+<section class="data-graph-section">
+  <div class="flex-row flex-justify-align">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User </th>
+        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="connections">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Connection </th>
+        <td mat-cell *matCellDef="let element"> {{element.connections}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="game_location">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Game Source </th>
+        <td mat-cell *matCellDef="let element"> {{element.game_location}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="game_city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Game City </th>
+        <td mat-cell *matCellDef="let element"> {{element.game_city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="server_location">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Server Address</th>
+        <td mat-cell *matCellDef="let element"> {{element.server_location}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="server_city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Server City </th>
+        <td mat-cell *matCellDef="let element"> {{element.server_city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="server_speed">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Server Speed</th>
+        <td mat-cell *matCellDef="let element"> {{element.server_speeed}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>

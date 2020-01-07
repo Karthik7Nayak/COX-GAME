@@ -1,0 +1,77 @@
+<section id="navbar">
+  <div class="navbar flex-row flex-justify-align">
+
+    <div class="column "><img src="./assets/images/logo.png" alt="cox_logo" class="logo"></div>
+    <div class="column nav-title"><span>PICK GAME</span></div>
+    <div class="column address flex-col">
+      <span>192.186.5.4</span>
+      <span class="login-span font-weight-600" (click)="onLogin()">Dashboard</span>
+    </div>
+  </div>
+  <div class="logged-user-email" (click)="onLauchApp()"><span>Launch Chrome</span></div>
+  <div (click)="onShowSystemConfig()" class="system-config-btn">Show System Config</div>
+</section>
+<section [ngStyle]="showSystemConfig ? {'display':'block'}: {'display':'none'}">
+  <div class="flex-col config-panel ">
+    <div class="flex-row"> 
+      <span>Processor :  </span>
+      <span>{{systemDetails.processor.model}}</span>      
+    </div>
+    <div class="flex-row"> 
+      <span>RAM :  </span>
+      <span>{{systemDetails.RAM}}</span>      
+    </div>
+    <div class="flex-row"> 
+      <span>Graphics :  </span>
+      <span>{{systemDetails.graphics.model}}</span>      
+    </div>
+    <div class="flex-row"> 
+      <span>Storage :  </span>
+      <span>{{systemDetails.DiskSize}}</span>      
+    </div>
+  </div>
+</section>
+<section id="game-slide-section">
+  <div class="game-row">
+
+    <div class="game-list flex-row">
+      <div class="game " *ngFor="let game of gamesData">
+        <img [src]="game.game_logo" (click)="onGameClick(game.game_id)">
+        <div class="game-name"><span class="font-weight-500">{{game.game_name}}</span></div>
+      </div>
+
+    </div>
+    <div class="game-name-key">
+      <div class="list flex-row font-weight-500">
+        <li id="Hash-li">#</li>
+        <li id="A-li">A</li>
+        <li id="B-li">B</li>
+        <li id="C-li">C</li>
+        <li id="D-li">D</li>
+        <li id="E-li">E</li>
+        <li id="F-li">F</li>
+        <li id="G-li">G</li>
+        <li id="H-li">H</li>
+        <li id="I-li">I</li>
+        <li id="J-li">J</li>
+        <li id="K-li">K</li>
+        <li id="L-li">L</li>
+        <li id="M-li">M</li>
+        <li id="N-li">N</li>
+        <li id="O-li">O</li>
+        <li id="P-li">P</li>
+        <li id="Q-li">Q</li>
+        <li id="R-li">R</li>
+        <li id="S-li">S</li>
+        <li id="T-li">T</li>
+        <li id="U-li">U</li>
+        <li id="V-li">V</li>
+        <li id="W-li">W</li>
+        <li id="X-li">X</li>
+        <li id="Y-li">Y</li>
+        <li id="Z-li">Z</li>
+      </div>
+
+    </div>
+  </div>
+</section>

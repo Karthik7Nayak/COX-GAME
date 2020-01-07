@@ -1,0 +1,55 @@
+<section id="navbar">
+  <div class="navbar flex-row flex-justify-align">
+
+    <div class="column "><img src="./assets/images/logo.png" alt="cox_logo"></div>
+    <div class="column nav-title"><span>Dashboard </span></div>
+    <div class="column address flex-col">
+      <span>192.186.5.4</span>    
+      <span class="login-span font-weight-600" (click)="onLogout()">Log Out</span></div>
+  </div>
+  <div class="logged-user-email"><span>abcxyz@cox.net</span></div>
+
+</section>
+<section class="data-graph-section">
+  <div class=" table-overflow mat-elevation-z8">
+
+    <table mat-table [dataSource]="dataSource" matSort >     
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User </th>
+        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+      </ng-container>    
+      <ng-container matColumnDef="game_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Game ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.game_id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="game_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Game ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.game_name}} </td>
+      </ng-container>    
+      <ng-container matColumnDef="conn_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Connection ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.conn_id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="src">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Game Source</th>
+        <td mat-cell *matCellDef="let element"> {{element.src}} </td>
+      </ng-container>
+      <ng-container matColumnDef="dst">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Server Destination </th>
+        <td mat-cell *matCellDef="let element"> {{element.dst}} </td>
+      </ng-container>
+      <ng-container matColumnDef="avg_direct_rtt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Server Speed</th>
+        <td mat-cell *matCellDef="let element"> {{element.avg_direct_rtt}} </td>
+      </ng-container>
+      <ng-container matColumnDef="avg_wtfast_rtt">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Server Wtfast Speed</th>
+        <td mat-cell *matCellDef="let element"> {{element.avg_wtfast_rtt}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+  </div>
+</section>

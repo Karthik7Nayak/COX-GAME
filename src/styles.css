@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap");
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+  /* overflow: hidden; */
+  background-color: #445051;
+  color: #ffffff;
+}
+#notification {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #000000;
+
+}
+.hidden {
+  display: none;
+}
+#message {
+color: #000000;}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-justify-align {
+  justify-content: center;
+  align-items: center;
+}
+.flex-justify {
+  justify-content: center;
+}
+.flex-align {
+  align-items: center;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.justify-content-space-btwn {
+  justify-content: space-between;
+}
+.flex-1 {
+  flex: 1;
+}
+
+td.mat-cell {
+  /* width: 210px; */
+  /* max-width: 427px !important; */
+  padding: 0 10px !important;
+}
+th.mat-header-cell {
+  padding: 0 10px !important;
+}
+.mat-table{
+  width: 1200px;
+}

@@ -1,0 +1,66 @@
+<div class="performance-component">
+  <section id="navbar">
+    <div class="navbar flex-row flex-justify-align">
+
+      <div class="column "  [routerLink]="['']" ><img src="./assets/images/logo.png" alt="cox_logo" class="logo"></div>
+      <div class="column nav-title"><span>PERFORMANCE</span></div>
+      <div class="column address"><span>192.186.5.4</span></div>
+    </div>
+
+  </section>
+  <section class="game-performance-section">
+    <div class="flex-col flex-justify game-metrice">
+      <div class="game-title-row flex-row justify-content-space-btwn font-weight-600">
+        <div class="flex-row "><span>Overwatch</span></div>
+        <div class="game-session-col">
+          <span>Waiting for game session....</span></div>
+      </div>
+      <div class="flex-row justify-content-space-btwn">
+        <div class="game-connection-time">
+          <span>Connection time: 00h 57m 59s</span>
+        </div>
+        <div class="game-disconnect">
+          <span> Disconnect and go back</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="game-details-section">
+    <div class="flex-col button-col font-weight-500">
+      <div class="button-row flex-row justify-content-space-btwn button-bottom-margin ">
+        <div (click)="onButtonClick('DATALOG')">DATALOG</div>
+        <div>CONNECTION EXCLUSION</div>
+        <div (click)="onButtonClick('TRACEROUTE')">TRACE ROUTE</div>
+
+      </div>
+      <div class="button-row flex-row justify-content-space-btwn">
+        <div (click)="onButtonClick('STATS')">STATS</div>
+        <div (click)="onButtonClick('DTATAGRAPH')" id="data-graph">DATA GRAPH</div>
+        <div (click)="onButtonClick('CHART')">CHART</div>
+      </div>
+    </div>
+    <div class="game-data">
+      <!-- <router-outlet></router-outlet> -->
+      <ng-template [ngIf]="componentModel.showGameStatsComponent">
+        <app-game-statistics></app-game-statistics>
+      </ng-template>
+      <ng-template [ngIf]="componentModel.showDataLogComponent">
+        <app-data-log>
+        </app-data-log>
+      </ng-template>
+      <ng-template [ngIf]="componentModel.showTraceRouteComponent">
+        <app-trace-route>
+        </app-trace-route>
+      </ng-template>
+      <ng-template [ngIf]="componentModel.showdataGraphcomponent">
+        <app-data-graph>
+        </app-data-graph>
+      </ng-template>
+      <ng-template [ngIf]="componentModel.showChartStatsComponent">
+        <app-chart-statistics>
+        </app-chart-statistics>
+      </ng-template>
+
+    </div>
+  </section>
+</div>

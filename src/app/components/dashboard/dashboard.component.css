@@ -1,0 +1,41 @@
+.navbar {
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px 25px;
+}
+.navbar .column {
+  flex: 1;
+  align-items: flex-end;
+}
+.navbar .address {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar .nav-title {
+  text-align: center;
+  padding-bottom: 15px;
+  /* -linear-gradient(#00a5fb, #01d635) */
+  border-image: linear-gradient(to left, #00a5fb 0%, #01d635 100%);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-bottom: 4px solid;
+}
+.navbar .nav-title span {
+  font-size: 45px;
+  letter-spacing: 2.5px;
+}
+.login-span {
+  margin-top: 10px;
+  color: #01d635;
+  cursor: pointer;
+}
+
+.data-graph-section {
+  margin-top: 30px;
+}
+.table-overflow{
+  width: 1200px;
+  height: 450px;
+  margin: 0 auto;
+  overflow: auto;
+}

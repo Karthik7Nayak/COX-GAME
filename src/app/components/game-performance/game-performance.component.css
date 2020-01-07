@@ -1,0 +1,115 @@
+.performance-component {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px 25px;
+  border-image: linear-gradient(to left, #00a5fb 0%, #01d635 100%);
+  border-image-slice: 1;
+  border-width: 2px;
+  border-bottom: 4px solid;
+}
+.navbar .logo{
+  cursor: pointer;
+}
+.navbar .column {
+  flex: 1;
+  align-items: center;
+}
+.navbar .address {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar .nav-title {
+  text-align: center;
+  padding-bottom: 15px;
+  /* -linear-gradient(#00a5fb, #01d635) */
+}
+.navbar .nav-title span {
+  font-size: 45px;
+  letter-spacing: 2.5px;
+}
+
+.game-performance-section .game-title-row {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.game-performance-section .game-metrice {
+  padding: 27px 25px;
+}
+.game-performance-section .game-metrice .game-disconnect {
+  color: #0086c5;
+}
+
+.game-details-section .button-col .button-bottom-margin {
+  margin-bottom: 5px;
+}
+.game-details-section .button-row div {
+  background-color: #445051;
+  width: 100%;
+  padding: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+  text-align: center;
+  /* width: ; */
+}
+
+.game-details-section .button-row div:hover {
+  background-color: #00a5fb;
+}
+.game-details-section .button-row div:active{
+  background-color: #00a5fb;
+
+}
+.game-details-section .game-data {
+  margin: 40px 25px;
+}
+.game-details-section .game-data .game-logo {
+  flex: 1;
+}
+.game-details-section .game-data .game-statistics {
+  flex: 1;
+}
+.game-details-section .game-data .game-logo img {
+  background-color: #fff;
+  width: 235px;
+  height: 300px;
+}
+.game-details-section .game-data .stat-value-font-size {
+  font-size: 26px;
+}
+.game-details-section .game-statistics span {
+  margin-bottom: 20px;
+}
+.game-details-section .game-stability {
+  margin-top: 30px;
+}
+.game-details-section .game-statistics .stat-value {
+  margin-top: 10px;
+}
+.game-details-section .game-connection {
+  padding: 24px 28px 10px 28px;
+  font-size: 14px;
+}
+.game-details-section .game-connection div:first-child {
+  margin-bottom: 5px;
+}
+.game-details-section .game-connection div span {
+  margin-left: 5px;
+}
+.game-details-section .game-launch {
+  margin: 25px 15px;
+}
+.game-details-section .game-launch .game-launch-text {
+  color: #00a5fb;
+  padding-bottom: 10px;
+}
+.game-details-section .game-report {
+  color: #fff;
+}
+
+/* .game-details-section .game-data .game-statistics */

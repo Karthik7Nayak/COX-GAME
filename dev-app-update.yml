@@ -1,0 +1,4 @@
+appId: com.electron.eliteGamer
+publish:
+      provider: github      
+      token: 571997af1124622e668fe65e17db9f95962223fe
