@@ -27,10 +27,9 @@ const getSystemData=()=>{
   si.diskLayout(data=>{
     cpudetails={...cpudetails,DiskSize:bytesTOGB(data[0].size)};
     systemData=cpudetails;
-console.log(data)
   });
  
-  console.log(cpudetails);
+  // console.log(cpudetails);
 
 }
 const showHomeWindow = () => {
@@ -56,20 +55,7 @@ const showHomeWindow = () => {
   });
   getSystemData();
 }
-const launchNewApp= (executablePath) =>{
-  var child = require('child_process').execFile;
-  child(executablePath, function(err, data) {
-    if(err){
-       console.error(err);
-       return;
-    }
-    console.log(data.toString());
-  });
-  const fs = require('fs');
-  const root = fs.readdirSync('c://Program Files (x86)');
-  console.log(root);
- 
-}
+
 const showLogin = () => {
   
   loginWindow = new BrowserWindow({
@@ -103,7 +89,7 @@ app.on('ready', () => {
     token: "571997af1124622e668fe65e17db9f95962223fe "
   });
   // autoUpdater.checkForUpdatesAndNotify();
-  autoUpdater.checkForUpdates();
+  // autoUpdater.checkForUpdates();
 });
 
 app.on('window-all-closed', () => {
@@ -143,11 +129,7 @@ ipcMain.on('show-system-config',()=>{
   });
 
 });
-ipcMain.on('launch-chrome',()=>{
-  // launchNewApp(executablePath);
-  executablePath="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-  launchNewApp(executablePath);
-});
+
 ipcMain.on('logout-user', () => {
   loginShown = false;
 });
@@ -163,3 +145,85 @@ ipcMain.on('restart_app', () => {
   console.log('restart app');
   autoUpdater.quitAndInstall();
 });
+
+const launchNewApp= (executablePath) =>{
+  
+  // execSync('cmd /k Spotify.exe');
+  var child = require('child_process').execFile;
+  // chrome.exe
+  console.log(executablePath);
+  child(executablePath, function(err, data) {
+    if(err){
+       console.error(err,'in err');
+       return;
+    }
+    console.log(data.toString());
+  });
+  // cmd /k myprog.exe
+}
+ipcMain.on('launch-app',(event,args)=>{
+  // args=args.replace(/([\/])/g, "\\/");
+  console.log(args);
+  // launchNewApp(args);
+  const { execSync } = require('child_process');
+  execSync('start '+args+'');
+  mainWindow.webContents.send('launched-app',args);
+});
+ipcMain.on('launch-chrome',()=>{
+  // let child = require('child_process').execFile;
+  // console.log('exec file');
+  // let exeFiles;
+  executablePath="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+  // executablePath="C:\\Users\\Interview\\AppData\\Local\\Microsoft\\WindowsApps\\Spotify.exe"
+  launchNewApp(executablePath);
+ 
+  const { execSync } = require('child_process');
+  const exeFiles=execSync('where *.exe');
+  console.log( exeFiles);
+  // execSync('cmd /k Spotify.exe');
+  // let list = execSync('wmic product get name,version');
+  // console.log(list.toString());
+  // console.log( exeFiles.toString());
+  
+  let data={
+    listString: exeFiles.toString(),
+    // list:list,
+    exeFile:exeFiles
+  };
+  mainWindow.webContents.send('chrome-launched',data);
+
+  // let which = require('which') 
+  // which('Skype', function (er, resolvedPath) {
+  //     console.log(resolvedPath);
+  // })
+  console.log('getting files ');
+
+  // require('child_process').exec('psinfo-s', (error, stdout, stderror)=>{
+  //     console.log(error,stderror);
+  //     console.log('getting files with version')
+  //     exeFiles=stdout; 
+  //     console.log(stdout)
+  //     mainWindow.webContents.send('chrome-launched',stdout);
+
+  //   });
+  
+});
+
+ // const { execSync } = require('child_process');
+  // let list = execSync('wmic product get name,version');
+  // console.log(list.toString());
+  // console.log(list);
+  
+  // let data={
+  //   listString: list.toString(),
+  //   list:list
+  // };
+  /** */
+  // require('child_process').exec('psinfo-s', (error, stdout, stderror)=>{
+  //   console.log(error,stderror);
+  //   console.log('getting files with version')
+  //   exeFiles=stdout; 
+  //   console.log(stdout)
+  // });
+  // launchNewApp(executablePath);
+ 
